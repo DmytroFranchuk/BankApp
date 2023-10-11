@@ -1,0 +1,278 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1694854985471-1
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: id
+                  value: 8549850
+              - column:
+                  name: account_id
+                  value: 806948501
+              - column:
+                  name: product_id
+                  value: 1
+              - column:
+                  name: interest_rate
+                  value: 8.65
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 15000.00
+
+  - changeSet:
+      id: 1694854985471-2
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948502
+              - column:
+                  name: product_id
+                  value: 1
+              - column:
+                  name: interest_rate
+                  value: 8.65
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 30000.00
+
+  - changeSet:
+      id: 1694854985471-3
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948503
+              - column:
+                  name: product_id
+                  value: 2
+              - column:
+                  name: interest_rate
+                  value: 9.35
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 8500.00
+  - changeSet:
+      id: 1694854985471-4
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948504
+              - column:
+                  name: product_id
+                  value: 3
+              - column:
+                  name: interest_rate
+                  value: 0.0002
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 0.00
+
+  - changeSet:
+      id: 1694854985471-5
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948505
+              - column:
+                  name: product_id
+                  value: 3
+              - column:
+                  name: interest_rate
+                  value: 0.0002
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 0.00
+
+  - changeSet:
+      id: 1694854985471-6
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948506
+              - column:
+                  name: product_id
+                  value: 4
+              - column:
+                  name: interest_rate
+                  value: 0.00015
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 0.00
+
+  - changeSet:
+      id: 1694854985471-7
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948507
+              - column:
+                  name: product_id
+                  value: 5
+              - column:
+                  name: interest_rate
+                  value: 3.85
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 3500.00
+
+  - changeSet:
+      id: 1694854985471-8
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948508
+              - column:
+                  name: product_id
+                  value: 5
+              - column:
+                  name: interest_rate
+                  value: 3.85
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 2000.00
+
+  - changeSet:
+      id: 1694854985471-9
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948509
+              - column:
+                  name: product_id
+                  value: 6
+              - column:
+                  name: interest_rate
+                  value: 4.15
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 7000.00
+
+  - changeSet:
+      id: 1694854985471-10
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948510
+              - column:
+                  name: product_id
+                  value: 5
+              - column:
+                  name: interest_rate
+                  value: 3.85
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 1000.00
+
+  - changeSet:
+      id: 1694854985471-11
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948511
+              - column:
+                  name: product_id
+                  value: 5
+              - column:
+                  name: interest_rate
+                  value: 3.85
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 2300.00
+
+  - changeSet:
+      id: 1694854985471-12
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: agreements
+            columns:
+              - column:
+                  name: account_id
+                  value: 806948512
+              - column:
+                  name: product_id
+                  value: 5
+              - column:
+                  name: interest_rate
+                  value: 3.85
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: sum
+                  value: 1550.00

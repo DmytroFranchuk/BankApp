@@ -1,0 +1,195 @@
+databaseChangeLog:
+  - changeSet:
+      id: client-1
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: id
+                  value: 20000101
+              - column:
+                  name: manager_id
+                  value: 101
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: tax_code
+                  value: 267a4cae-5592-11ee-2
+              - column:
+                  name: first_name
+                  value: Martin
+              - column:
+                  name: last_name
+                  value: Luter
+              - column:
+                  name: email
+                  value: martin23luter@gmail.com
+              - column:
+                  name: address
+                  value: Lesnaja 28
+              - column:
+                  name: phone
+                  value: 491785009811
+
+  - changeSet:
+      id: client-2
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: manager_id
+                  value: 101
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: tax_code
+                  value: 660e7632-5593-11ee2
+              - column:
+                  name: first_name
+                  value: Sofia
+              - column:
+                  name: last_name
+                  value: Maluta
+              - column:
+                  name: email
+                  value: pacifik2020@gmail.com
+              - column:
+                  name: address
+                  value: Kojur 187A
+              - column:
+                  name: phone
+                  value: 491785005643
+
+  - changeSet:
+      id: client-3
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: manager_id
+                  value: 102
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: tax_code
+                  value: 6cf3c7d0-5594-11ee2
+              - column:
+                  name: first_name
+                  value: Jordano
+              - column:
+                  name: last_name
+                  value: Bruno
+              - column:
+                  name: email
+                  value: lemurpetrol14@gmail.com
+              - column:
+                  name: address
+                  value: Kievskaja 55
+              - column:
+                  name: phone
+                  value: 491785784643
+
+  - changeSet:
+      id: client-4
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: manager_id
+                  value: 102
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: tax_code
+                  value: 267a4cae-5332-11ee-2
+              - column:
+                  name: first_name
+                  value: Serjio
+              - column:
+                  name: last_name
+                  value: Shuter
+              - column:
+                  name: email
+                  value: moreman56@gmail.com
+              - column:
+                  name: address
+                  value: Leteria 218
+              - column:
+                  name: phone
+                  value: 491785009832
+
+  - changeSet:
+      id: client-5
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: manager_id
+                  value: 103
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: tax_code
+                  value: 660e7645-5593-11ee2
+              - column:
+                  name: first_name
+                  value: Andre
+              - column:
+                  name: last_name
+                  value: Maltus
+              - column:
+                  name: email
+                  value: maltalove12@gmail.com
+              - column:
+                  name: address
+                  value: Kojur 187A
+              - column:
+                  name: phone
+                  value: 491785005345
+
+  - changeSet:
+      id: client-6
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: clients
+            columns:
+              - column:
+                  name: manager_id
+                  value: 103
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: tax_code
+                  value: 6cf3c7d0-5545-22ee2
+              - column:
+                  name: first_name
+                  value: Arno
+              - column:
+                  name: last_name
+                  value: Bernuli
+              - column:
+                  name: email
+                  value: arnoba@gmail.com
+              - column:
+                  name: address
+                  value: Lozovaja 35
+              - column:
+                  name: phone
+                  value: 491785784963

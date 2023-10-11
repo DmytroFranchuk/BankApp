@@ -1,0 +1,236 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1694854985466-1
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  name: status
+                  type: ENUM('ACTIVE', 'BLOCKED', 'INACTIVE')
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: updated_at
+                  type: timestamp
+            tableName: managers
+
+  - changeSet:
+      id: 1694854985466-2
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: manager_id
+                  type: INT
+              - column:
+                  name: status_client
+                  type: VARCHAR(20)
+              - column:
+                  name: tax_code
+                  type: VARCHAR(20)
+              - column:
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  name: email
+                  type: VARCHAR(60)
+              - column:
+                  name: address
+                  type: VARCHAR(80)
+              - column:
+                  name: phone
+                  type: VARCHAR(20)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: updated_at
+                  type: timestamp
+            tableName: clients
+
+  - changeSet:
+      id: 1694854985466-3
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: manager_id
+                  type: INT
+              - column:
+                  name: type_product
+                  type: VARCHAR(70)
+              - column:
+                  name: status_product
+                  type: VARCHAR(20)
+              - column:
+                  name: currency_code
+                  type: VARCHAR(5)
+              - column:
+                  name: interest_rate
+                  type: DECIMAL(6, 4)
+              - column:
+                  name: limit_product
+                  type: DECIMAL(15, 2)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: updated_at
+                  type: timestamp
+            tableName: products
+
+  - changeSet:
+      id: 1694854985466-4
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: client_id
+                  type: INT
+              - column:
+                  name: name_account
+                  type: VARCHAR(100)
+              - column:
+                  name: type_account
+                  type: VARCHAR(20)
+              - column:
+                  name: status_account
+                  type: VARCHAR(20)
+              - column:
+                  name: balance
+                  type: DECIMAL(15, 2)
+              - column:
+                  name: currency_code
+                  type: VARCHAR(5)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: updated_at
+                  type: timestamp
+            tableName: accounts
+
+  - changeSet:
+      id: 1694854985466-5
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: account_id
+                  type: INT
+              - column:
+                  name: product_id
+                  type: INT
+              - column:
+                  name: interest_rate
+                  type: DECIMAL(6, 4)
+              - column:
+                  name: status_agreement
+                  type: VARCHAR(20)
+              - column:
+                  name: sum
+                  type: DECIMAL(15, 2)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: updated_at
+                  type: timestamp
+            tableName: agreements
+
+  - changeSet:
+      id: 1694854985466-6
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: INT
+              - column:
+                  name: debit_account_id
+                  type: INT
+              - column:
+                  name: credit_account_id
+                  type: INT
+              - column:
+                  name: type_transaction
+                  type: VARCHAR(20)
+              - column:
+                  name: amount
+                  type: DECIMAL(12, 2)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+            tableName: transactions

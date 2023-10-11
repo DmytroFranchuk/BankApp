@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1694854985467-1
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: managers
+            columns:
+              - column:
+                  name: id
+                  value: 101
+              - column:
+                  name: first_name
+                  value: Major
+              - column:
+                  name: last_name
+                  value: Lora
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: description
+                  value: Account management
+
+  - changeSet:
+      id: 1694854985467-2
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: managers
+            columns:
+              - column:
+                  name: first_name
+                  value: Kilsh
+              - column:
+                  name: last_name
+                  value: Natalia
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: description
+                  value: Applications and inquiries
+
+  - changeSet:
+      id: 1694854985467-3
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: managers
+            columns:
+              - column:
+                  name: first_name
+                  value: Amedov
+              - column:
+                  name: last_name
+                  value: Aram
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: description
+                  value: Consulting and support

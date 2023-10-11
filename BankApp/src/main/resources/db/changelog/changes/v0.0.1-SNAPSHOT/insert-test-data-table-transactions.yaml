@@ -1,0 +1,316 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1694854985471-1
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  value: 1300001
+              - column:
+                  name: debit_account_id
+                  value: 806948501
+              - column:
+                  name: credit_account_id
+                  value: 806948501
+              - column:
+                  name: type
+                  value: TRANSFER
+              - column:
+                  name: amount
+                  value: 150.00
+              - column:
+                  name: description
+                  value: Transfer between bank clients
+              - column:
+                  name: created_at
+                  value: "2023-05-20 20:59:06"
+
+  - changeSet:
+      id: 1694854985471-2
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948502
+              - column:
+                  name: credit_account_id
+                  value: 806948502
+              - column:
+                  name: type
+                  value: PAYMENT
+              - column:
+                  name: amount
+                  value: 25.00
+              - column:
+                  name: description
+                  value: Payment for services and purchases
+              - column:
+                  name: created_at
+                  value: "2022-05-22 21:59:06"
+
+  - changeSet:
+      id: 1694854985471-3
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948503
+              - column:
+                  name: credit_account_id
+                  value: 806948503
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 50.00
+              - column:
+                  name: description
+                  value: Cash withdrawal from an ATM
+              - column:
+                  name: created_at
+                  value: "2021-04-13 20:59:06"
+
+  - changeSet:
+      id: 1694854985471-4
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948504
+              - column:
+                  name: credit_account_id
+                  value: 806948504
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+  - changeSet:
+      id: 1694854985471-5
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948505
+              - column:
+                  name: credit_account_id
+                  value: 806948505
+              - column:
+                  name: type
+                  value: DEPOSIT
+              - column:
+                  name: amount
+                  value: 1000.00
+              - column:
+                  name: description
+                  value: Payment at the cash desk
+              - column:
+                  name: created_at
+                  value: "2023-03-25 17:59:06"
+
+  - changeSet:
+      id: 1694854985471-6
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948507
+              - column:
+                  name: credit_account_id
+                  value: 806948507
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+  - changeSet:
+      id: 1694854985471-7
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948508
+              - column:
+                  name: credit_account_id
+                  value: 806948508
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+  - changeSet:
+      id: 1694854985471-8
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948509
+              - column:
+                  name: credit_account_id
+                  value: 806948509
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+  - changeSet:
+      id: 1694854985471-9
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948510
+              - column:
+                  name: credit_account_id
+                  value: 806948510
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+
+  - changeSet:
+      id: 1694854985471-10
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948511
+              - column:
+                  name: credit_account_id
+                  value: 806948511
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+  - changeSet:
+      id: 1694854985471-11
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948512
+              - column:
+                  name: credit_account_id
+                  value: 806948512
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"
+
+  - changeSet:
+      id: 1694854985471-12
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: transactions
+            columns:
+              - column:
+                  name: debit_account_id
+                  value: 806948506
+              - column:
+                  name: credit_account_id
+                  value: 806948506
+              - column:
+                  name: type
+                  value: CASH
+              - column:
+                  name: amount
+                  value: 53.00
+              - column:
+                  name: description
+                  value: Depositing funds through a payment terminal
+              - column:
+                  name: created_at
+                  value: "2023-02-20 12:39:46"

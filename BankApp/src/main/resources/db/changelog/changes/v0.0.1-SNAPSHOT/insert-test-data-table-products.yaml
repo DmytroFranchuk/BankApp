@@ -1,0 +1,159 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1694854985468-1
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: manager_id
+                  value: 101
+              - column:
+                  name: type
+                  value: CREDIT_ACCOUNT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: currency_code
+                  value: EUR
+              - column:
+                  name: interest_rate
+                  value: 8.65
+              - column:
+                  name: limit_product
+                  value: 75000.00
+
+  - changeSet:
+      id: 1694854985468-2
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: manager_id
+                  value: 101
+              - column:
+                  name: type
+                  value: CREDIT_ACCOUNT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: currency_code
+                  value: USD
+              - column:
+                  name: interest_rate
+                  value: 9.35
+              - column:
+                  name: limit_product
+                  value: 50000.00
+
+  - changeSet:
+      id: 1694854985468-3
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: manager_id
+                  value: 102
+              - column:
+                  name: type
+                  value: DEBIT_ACCOUNT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: currency_code
+                  value: EUR
+              - column:
+                  name: interest_rate
+                  value: 0.00020
+              - column:
+                  name: limit_product
+                  value: 0.00
+
+  - changeSet:
+      id: 1694854985468-4
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: manager_id
+                  value: 102
+              - column:
+                  name: type
+                  value: DEBIT_ACCOUNT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: currency_code
+                  value: USD
+              - column:
+                  name: interest_rate
+                  value: 0.00015
+              - column:
+                  name: limit_product
+                  value: 0.00
+
+  - changeSet:
+      id: 1694854985468-5
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: manager_id
+                  value: 103
+              - column:
+                  name: type
+                  value: SAVING_ACCOUNT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: currency_code
+                  value: EUR
+              - column:
+                  name: interest_rate
+                  value: 3.85
+              - column:
+                  name: limit_product
+                  value: 100000.00
+
+  - changeSet:
+      id: 1694854985468-6
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: manager_id
+                  value: 103
+              - column:
+                  name: type
+                  value: SAVING_ACCOUNT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: currency_code
+                  value: USD
+              - column:
+                  name: interest_rate
+                  value: 4.15
+              - column:
+                  name: limit_product
+                  value: 50000.00

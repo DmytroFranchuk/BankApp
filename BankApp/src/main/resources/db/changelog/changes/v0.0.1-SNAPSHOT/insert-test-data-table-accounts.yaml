@@ -1,0 +1,347 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1694854985470-1
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948501
+              - column:
+                  name: client_id
+                  value: 20000101
+              - column:
+                  name: name
+                  value: payment account 1
+              - column:
+                  name: type
+                  value: CREDIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 15000.00
+              - column:
+                  name: currency_code
+                  value: EUR
+  - changeSet:
+      id: 1694854985470-2
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948502
+              - column:
+                  name: client_id
+                  value: 20000101
+              - column:
+                  name: name
+                  value: payment account 1
+              - column:
+                  name: type
+                  value: CREDIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 30000.00
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-3
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948503
+              - column:
+                  name: client_id
+                  value: 20000102
+              - column:
+                  name: name
+                  value: payment account 2
+              - column:
+                  name: type
+                  value: CREDIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 8500.00
+              - column:
+                  name: currency_code
+                  value: USD
+
+  - changeSet:
+      id: 1694854985470-4
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948504
+              - column:
+                  name: client_id
+                  value: 20000102
+              - column:
+                  name: name
+                  value: payment account 2
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 12398.67
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-5
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948505
+              - column:
+                  name: client_id
+                  value: 20000103
+              - column:
+                  name: name
+                  value: payment account 3
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 24392.48
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-6
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948506
+              - column:
+                  name: client_id
+                  value: 20000103
+              - column:
+                  name: name
+                  value: payment account 3
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 3695.71
+              - column:
+                  name: currency_code
+                  value: USD
+
+  - changeSet:
+      id: 1694854985470-7
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948507
+              - column:
+                  name: client_id
+                  value: 20000104
+              - column:
+                  name: name
+                  value: payment account 4
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 3500.00
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-8
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948508
+              - column:
+                  name: client_id
+                  value: 20000104
+              - column:
+                  name: name
+                  value: payment account 4
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 2000.00
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-9
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948509
+              - column:
+                  name: client_id
+                  value: 20000105
+              - column:
+                  name: name
+                  value: payment account 5
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 7000.00
+              - column:
+                  name: currency_code
+                  value: USD
+
+  - changeSet:
+      id: 1694854985470-10
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948510
+              - column:
+                  name: client_id
+                  value: 20000105
+              - column:
+                  name: name
+                  value: payment account 5
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 1000.00
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-11
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948511
+              - column:
+                  name: client_id
+                  value: 20000106
+              - column:
+                  name: name
+                  value: payment account 6
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 2300.00
+              - column:
+                  name: currency_code
+                  value: EUR
+
+  - changeSet:
+      id: 1694854985470-12
+      author: d.franchuk
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: id
+                  value: 806948512
+              - column:
+                  name: client_id
+                  value: 20000106
+              - column:
+                  name: name
+                  value: payment account 6
+              - column:
+                  name: type
+                  value: DEBIT
+              - column:
+                  name: status
+                  value: ACTIVE
+              - column:
+                  name: balance
+                  value: 1550.00
+              - column:
+                  name: currency_code
+                  value: EUR

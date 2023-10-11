@@ -1,0 +1,427 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1695140323490-1
+      author: d.franchuk
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  name: status
+                  type: ENUM('ACTIVE', 'BLOCKED', 'INACTIVE')
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: created_at
+                  type: timestamp
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: updated_at
+                  type: timestamp
+            tableName: managers
+
+  - changeSet:
+            id: 1695140323490-2
+            author: d.franchuk
+            changes:
+              - createTable:
+                  columns:
+                    - column:
+                        autoIncrement: true
+                        constraints:
+                          nullable: false
+                          primaryKey: true
+                        name: id
+                        type: BIGINT
+                    - column:
+                        name: manager_id
+                        type: BIGINT
+                    - column:
+                        name: status
+                        type: ENUM('ACTIVE', 'BLOCKED', 'INACTIVE')
+                    - column:
+                        name: tax_code
+                        type: VARCHAR(20)
+                    - column:
+                        name: first_name
+                        type: VARCHAR(50)
+                    - column:
+                        name: last_name
+                        type: VARCHAR(50)
+                    - column:
+                        name: email
+                        type: VARCHAR(60)
+                    - column:
+                        name: address
+                        type: VARCHAR(80)
+                    - column:
+                        name: phone
+                        type: VARCHAR(20)
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: created_at
+                        type: timestamp
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: updated_at
+                        type: timestamp
+                  tableName: clients
+
+  - changeSet:
+            id: 1695140323490-3
+            author: d.franchuk
+            changes:
+              - createTable:
+                  columns:
+                    - column:
+                        autoIncrement: true
+                        constraints:
+                          nullable: false
+                          primaryKey: true
+                        name: id
+                        type: BIGINT
+                    - column:
+                        name: manager_id
+                        type: BIGINT
+                    - column:
+                        name: type
+                        type: ENUM('CREDIT_ACCOUNT', 'DEBIT_ACCOUNT', 'SAVING_ACCOUNT')
+                    - column:
+                        name: status
+                        type: ENUM('ACTIVE', 'BLOCKED', 'INACTIVE')
+                    - column:
+                        name: currency_code
+                        type: ENUM('EUR', 'USD')
+                    - column:
+                        name: interest_rate
+                        type: DECIMAL(6, 4)
+                    - column:
+                        name: limit_product
+                        type: DECIMAL(15, 2)
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: created_at
+                        type: timestamp
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: updated_at
+                        type: timestamp
+                  tableName: products
+
+  - changeSet:
+            id: 1695140323490-4
+            author: d.franchuk
+            changes:
+              - createTable:
+                  columns:
+                    - column:
+                        autoIncrement: true
+                        constraints:
+                          nullable: false
+                          primaryKey: true
+                        name: id
+                        type: BIGINT
+                    - column:
+                        name: client_id
+                        type: BIGINT
+                    - column:
+                        name: name
+                        type: VARCHAR(100)
+                    - column:
+                        name: type
+                        type: ENUM('CREDIT', 'DEBIT')
+                    - column:
+                        name: status
+                        type: ENUM('ACTIVE', 'BLOCKED', 'INACTIVE')
+                    - column:
+                        name: balance
+                        type: DECIMAL(15, 2)
+                    - column:
+                        name: currency_code
+                        type: ENUM('EUR', 'USD')
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: created_at
+                        type: timestamp
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: updated_at
+                        type: timestamp
+                  tableName: accounts
+
+  - changeSet:
+            id: 1695140323490-5
+            author: d.franchuk
+            changes:
+              - createTable:
+                  columns:
+                    - column:
+                        autoIncrement: true
+                        constraints:
+                          nullable: false
+                          primaryKey: true
+                        name: id
+                        type: BIGINT
+                    - column:
+                        constraints:
+                          unique: true
+                        name: account_id
+                        type: BIGINT
+                    - column:
+                        name: product_id
+                        type: BIGINT
+                    - column:
+                        name: interest_rate
+                        type: DECIMAL(6, 4)
+                    - column:
+                        name: status
+                        type: ENUM('ACTIVE', 'BLOCKED', 'INACTIVE')
+                    - column:
+                        name: sum
+                        type: DECIMAL(15, 2)
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: created_at
+                        type: timestamp
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: updated_at
+                        type: timestamp
+                  tableName: agreements
+
+  - changeSet:
+            id: 1695140323490-6
+            author: d.franchuk
+            changes:
+              - createTable:
+                  columns:
+                    - column:
+                        autoIncrement: true
+                        constraints:
+                          nullable: false
+                          primaryKey: true
+                        name: id
+                        type: BIGINT
+                    - column:
+                        name: debit_account_id
+                        type: BIGINT
+                    - column:
+                        name: credit_account_id
+                        type: BIGINT
+                    - column:
+                        name: type
+                        type: ENUM('DEPOSIT', 'CASH', 'PAYMENT', 'TRANSFER')
+                    - column:
+                        name: amount
+                        type: DECIMAL(12, 2)
+                    - column:
+                        name: description
+                        type: VARCHAR(255)
+                    - column:
+                        defaultValueComputed: CURRENT_TIMESTAMP
+                        name: created_at
+                        type: timestamp
+                  tableName: transactions
+
+  - changeSet:
+        id: 1695140323491-7
+        author: d.franchuk
+        changes:
+          - createIndex:
+              columns:
+                - column:
+                    name: manager_id
+              indexName: FKb04ux70c9nn0yi4y3pmitlfo9
+              tableName: clients
+
+  - changeSet:
+        id: 1695140323491-8
+        author: d.franchuk
+        changes:
+          - createIndex:
+              columns:
+                - column:
+                    name: manager_id
+              indexName: FKg98uwjewytai1i7fe2cu4xioi
+              tableName: products
+
+  - changeSet:
+        id: 1695140323491-9
+        author: d.franchuk
+        changes:
+          - createIndex:
+              columns:
+                - column:
+                    name: client_id
+              indexName: FKgymog7firrf8bnoiig61666ob
+              tableName: accounts
+
+  - changeSet:
+        id: 1695140323491-10
+        author: d.franchuk
+        changes:
+          - createIndex:
+              columns:
+                - column:
+                    name: product_id
+              indexName: FKvtp15t5x12x5lk4akedy8e4n
+              tableName: agreements
+
+  - changeSet:
+      id: 1695140323491-11
+      author: d.franchuk
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: account_id
+            indexName: FKlshrwa9mq7iar9rwxkwdrus2r
+            tableName: agreements
+
+  - changeSet:
+        id: 1695140323491-12
+        author: d.franchuk
+        changes:
+          - createIndex:
+              columns:
+                - column:
+                    name: credit_account_id
+              indexName: FKc6bgqjw4pbwa2xsg2ql7n5grv
+              tableName: transactions
+
+  - changeSet:
+        id: 1695140323491-13
+        author: d.franchuk
+        changes:
+          - createIndex:
+              columns:
+                - column:
+                    name: debit_account_id
+              indexName: FKkpq7imh2rcolpghjxb6b8ouwc
+              tableName: transactions
+
+  - changeSet:
+        id: 1695140323491-14
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: manager_id
+              baseTableName: products
+              constraintName: FKg98uwjewytai1i7fe2cu4xioi
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: managers
+              validate: true
+
+  - changeSet:
+        id: 1695140323491-15
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: manager_id
+              baseTableName: clients
+              constraintName: FKb04ux70c9nn0yi4y3pmitlfo9
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: managers
+              validate: true
+
+  - changeSet:
+        id: 1695140323491-16
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: client_id
+              baseTableName: accounts
+              constraintName: FKgymog7firrf8bnoiig61666ob
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: clients
+              validate: true
+
+  - changeSet:
+        id: 1695140323491-17
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: product_id
+              baseTableName: agreements
+              constraintName: FKvtp15t5x12x5lk4akedy8e4n
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: products
+              validate: true
+
+  - changeSet:
+        id: 1695140323491-18
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: account_id
+              baseTableName: agreements
+              constraintName: FKlshrwa9mq7iar9rwxkwdrus2r
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: accounts
+              validate: true
+
+  - changeSet:
+        id: 1695140323491-19
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: debit_account_id
+              baseTableName: transactions
+              constraintName: FKkpq7imh2rcolpghjxb6b8ouwc
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: accounts
+              validate: true
+
+  - changeSet:
+        id: 1695140323491-20
+        author: d.franchuk
+        changes:
+          - addForeignKeyConstraint:
+              baseColumnNames: credit_account_id
+              baseTableName: transactions
+              constraintName: FKc6bgqjw4pbwa2xsg2ql7n5grv
+              deferrable: false
+              initiallyDeferred: false
+              onDelete: SET NULL
+              onUpdate: RESTRICT
+              referencedColumnNames: id
+              referencedTableName: accounts
+              validate: true

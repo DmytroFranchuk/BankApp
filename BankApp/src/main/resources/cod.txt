@@ -1,0 +1,243 @@
+    В начале клиент подписывает договор с банком, который устанавливает
+    условия и правила, а затем на основании этого договора открывается
+    банковский аккаунт для клиента. Связь договор со счетом один ко одному
+    один договор на обслуживание счета - один счет.
+
+
+
+
+
+
+  - changeSet:
+        id: dropTable_accounts
+        author: d.franchuk
+        changes:
+          - dropTable:
+              tableName: accounts
+
+  - changeSet:
+      id: dropTable_agreements
+      author: d.franchuk
+      changes:
+        - dropTable:
+            tableName: agreements
+
+  - changeSet:
+      id: dropTable_clients
+      author: d.franchuk
+      changes:
+        - dropTable:
+            tableName: clients
+
+  - changeSet:
+      id: dropTable_managers
+      author: d.franchuk
+      changes:
+        - dropTable:
+            tableName: managers
+
+  - changeSet:
+      id: dropTable_products
+      author: d.franchuk
+      changes:
+        - dropTable:
+            tableName: products
+
+  - changeSet:
+      id: dropTable_transactions
+      author: d.franchuk
+      changes:
+        - dropTable:
+            tableName: transactions
+
+
+
+
+    ACTIVE("ACTIVE"),
+    INACTIVE("INACTIVE"),
+    BLOCKED("BLOCKED");
+
+    private final String value;
+
+    Status(String value) {
+        this.value = value;
+    }
+
+//    @JsonValue
+    public String getValue() {
+        return value;
+    }
+
+
+
+
+
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_id", referencedColumnName = "id")
+    private Manager manager;
+
+    @OneToMany(
+        mappedBy = "manager",
+        cascade = {MERGE, PERSIST, REFRESH, DETACH},
+        fetch = FetchType.LAZY
+    )
+    private Set<Client> clients = new HashSet<>();
+
+    @OneToMany(
+        mappedBy = "manager",
+        cascade = {MERGE, PERSIST, REFRESH, DETACH},
+        fetch = FetchType.LAZY
+    )
+    private Set<Product> products = new HashSet<>();
+
+
+
+
+
+    import java.util.*;
+    import java.util.stream.Collectors;
+
+    public class Main {
+        public static void main(String[] args) {
+            String[] otheArray = new String[10];
+            String[] array0 = Arrays.copyOf(otheArray, otheArray.length);
+            String[] array1 = new String[3];
+            String[] array2 = new String[]{"One", "Two", "Three"};
+            String[] array3 = List.of("One", "Two", "Three").toArray(String[]::new);
+            boolean[] array = new boolean[3];
+            System.out.println(Arrays.toString(array));
+
+            int[][] matrix = new int[3][];
+            matrix[0] = new int[]{1, 2, 3, 4, 5, 6};
+            matrix[1] = new int[]{1, 2, 3};
+            matrix[2] = new int[]{1};
+            for (int[] ints : matrix) {
+                for (int anInt : ints) {
+                    System.out.print(anInt + "");
+                }
+                System.out.println();
+            }
+            int[][] array11 = {{1, 2}, {3, 4}};
+            int[][] array12 = {{1, 2}, {3, 4}};
+            System.out.println(Arrays.deepEquals(array11, array12));
+            System.out.println(Arrays.equals(array11, array12));
+            System.out.println(array11.equals(array12));
+            String[] arr = new String[4];
+            String text = "";
+            for (int i = 0; i <= 3; i++) {
+                text += arr[i];
+            }
+            System.out.println(text);
+
+            Queue<String> queue = new PriorityQueue<>(List.of("V", "B", "A", "C", "B", "A", "C"));
+            System.out.println(queue);
+            Queue<String> queue1 = new PriorityQueue<>();
+    //        queue1.add(null);
+            Queue<String> queue2 = new ArrayDeque<>();
+    //        queue2.add(null);
+            Map<String, String> map = new TreeMap<>();
+    //        map.put(null, "wer");
+    //        List<String> list = new LinkedList<>();
+    //        list.add(null);
+            List<String> list1 = new ArrayList<>();
+            list1.add(null);
+            Map<String, String> map1 = new HashMap<>();
+            map1.put(null, null);
+            Set<String> set = new TreeSet<>();
+    //        set.add(null);
+            Queue<String> queue3 = new PriorityQueue<>(List.of("B", "A", "C", "B", "A", "C"));
+            while (queue3.peek() != null) {
+                System.out.print(queue3.poll());
+            }
+
+            Set<Boolean> set1 = new TreeSet<>();
+            Set<Boolean> set2 = new HashSet<>();
+    //        set1.add(null); // 1
+    //        set2.add(null); // 2
+            List<Long> list2 = new ArrayList<>();
+            list2.add(2L);
+            list2.add(3L);
+            list2.add(1, 1L);
+            System.out.println();
+            System.out.println(list2.get(2));
+            String[] array5 = {"One", "Two", "Three"};
+            List<String> list5 = new ArrayList<>();
+            Collections.addAll(list5, array5);
+
+            System.out.println( "A" .compareTo( "B"));
+            String one1 = "One";
+            String one2 = "One";
+            String one3 = new String("One");
+            String one4 = new String("One");
+            System.out.println(one1.equals(one2));
+            System.out.println(one1 == one2);
+            System.out.println(one2.equals(one3));
+            System.out.println(one2 == one3);
+            System.out.println(one3.equals(one4));
+            System.out.println(one3 == one4);
+
+            List<Long> list = new ArrayList<>();
+            list.add(2L);
+            list.add(3L);
+            list.add(null);
+            list.sort(Comparator.nullsFirst(Comparator.naturalOrder()));
+            System.out.println(list);
+
+
+
+            String[] words = {"act", "cat", "dog", "god", "hello", "world", "listen", "silent"};
+            List<List<String>> anagrams = AnagramFinder.findAnagrams(words);
+
+            for (List<String> anagramGroup : anagrams) {
+    //            System.out.println(anagramGroup);
+            }
+        }
+    }
+
+    class AnagramFinder1 {
+        public static List<List<String>> findAnagrams(String[] words) {
+            Map<String, List<String>> anagramMap = Arrays.stream(words)
+                    .collect(Collectors.groupingBy(AnagramFinder1::sortedChars));
+
+            return anagramMap.values().stream()
+                    .filter(list -> list.size() > 1)
+                    .collect(Collectors.toList());
+        }
+
+        private static String sortedChars(String word) {
+            char[] chars = word.toCharArray();
+            Arrays.sort(chars);
+            return new String(chars);
+        }
+    }
+
+    class AnagramFinder {
+        public static List<List<String>> findAnagrams(String[] words) {
+            Map<String, List<String>> anagramMap = new HashMap<>();
+
+            for (String word : words) {
+                String sortedWord = sortedChars(word);
+                if (!anagramMap.containsKey(sortedWord)) {
+                    anagramMap.put(sortedWord, new ArrayList<>());
+                }
+                anagramMap.get(sortedWord).add(word);
+            }
+
+            List<List<String>> anagramGroups = new ArrayList<>();
+            for (List<String> group : anagramMap.values()) {
+                if (group.size() > 1) {
+                    anagramGroups.add(group);
+                }
+            }
+
+            return anagramGroups;
+        }
+
+        private static String sortedChars(String word) {
+            char[] chars = word.toCharArray();
+            Arrays.sort(chars);
+            return new String(chars);
+        }
+    }
