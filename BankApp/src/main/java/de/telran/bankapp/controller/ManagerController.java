@@ -2,7 +2,9 @@ package de.telran.bankapp.controller;
 
 import de.telran.bankapp.dto.ManagerDto;
 import de.telran.bankapp.dto.ManagerInfoDto;
+import de.telran.bankapp.dto.ManagerWithClientsDto;
 import de.telran.bankapp.entity.Manager;
+import de.telran.bankapp.service.ClientService;
 import de.telran.bankapp.service.ManagerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ import java.util.List;
 public class ManagerController {
 
     private final ManagerService managerService;
+    private final ClientService clientService;
 
     @GetMapping
     public ResponseEntity<List<ManagerDto>> getAll() {
@@ -36,11 +39,15 @@ public class ManagerController {
         return manager;
     }
 
+    @GetMapping("/clients")
+    public ResponseEntity<List<ManagerWithClientsDto>> getManagersWithClients() {
+        List<ManagerWithClientsDto> managerWithClients = clientService.getManagersWithClients();
+        return new ResponseEntity<>(managerWithClients, HttpStatus.OK);
+    }
+
+
     @PostMapping
     public ResponseEntity<Manager> create(@RequestBody Manager manager) {
-        LocalDateTime currentTime = LocalDateTime.now();
-        manager.setCreatedAt(currentTime);
-        manager.setUpdatedAt(currentTime);
         Manager addNew = managerService.createManager(manager);
         return new ResponseEntity<>(addNew, HttpStatus.CREATED);
     }
@@ -66,25 +73,13 @@ public class ManagerController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
         }
     }
+
     // Вывести всех клиентов у менеджера по его managerId
     @GetMapping("/{managerId}/clients")
     public ResponseEntity<List<ManagerInfoDto>> getClientsByManagerId(@PathVariable Long managerId) {
         List<ManagerInfoDto> clients = managerService.getClientsByManagerId(managerId);
         return ResponseEntity.ok(clients);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

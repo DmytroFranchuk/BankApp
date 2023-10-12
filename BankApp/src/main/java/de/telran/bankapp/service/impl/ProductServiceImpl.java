@@ -38,12 +38,4 @@ public class ProductServiceImpl implements ProductService {
                 .map(productMapper::productToDto)
                 .collect(Collectors.toList());
     }
-
-//    @Override
-//    public List<ProductDto> getProductsByManagerId(Long managerId) {
-//        List<Product> products = productRepository.findByManagerId(managerId);
-//        return products.stream()
-//                .map(productMapper::productToDto)
-//                .collect(Collectors.toList());
-//    }
 }

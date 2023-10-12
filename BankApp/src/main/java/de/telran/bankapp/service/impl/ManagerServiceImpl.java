@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -25,19 +26,11 @@ public class ManagerServiceImpl implements ManagerService {
     private final ManagerRepository managerRepository;
     private final ManagerMapper managerMapper;
     private final ManagerInfoMapper managerInfoMapper;
-//    private final ClientMapper clientMapper;
-//    private final ClientService clientService;
-//    private final ProductService productService;
 
     @Override
     public List<ManagerDto> getAll() {
         List<Manager> managers = managerRepository
                 .findAll(Sort.by(Sort.Order.asc("id")));
-//        for (Manager manager : managers) {
-//            for (Client client: manager.getClients()) {
-//                System.out.println(client.getId());
-//            }
-//        }
         return managers.stream()
                 .map(managerMapper::managerToDto)
                 .collect(Collectors.toList());
@@ -50,6 +43,9 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public Manager createManager(Manager manager) {
+        LocalDateTime currentTime = LocalDateTime.now();
+        manager.setCreatedAt(currentTime);
+        manager.setUpdatedAt(currentTime);
         return managerRepository.save(manager);
     }
 
@@ -61,8 +57,9 @@ public class ManagerServiceImpl implements ManagerService {
                 existingManager.setFirstName(updatedManager.getFirstName());
                 existingManager.setLastName(updatedManager.getLastName());
                 existingManager.setStatus(updatedManager.getStatus());
-                existingManager.setCreatedAt(updatedManager.getCreatedAt());
-                existingManager.setUpdatedAt(updatedManager.getUpdatedAt());
+                LocalDateTime currentTime = LocalDateTime.now();
+                existingManager.setCreatedAt(currentTime);
+                existingManager.setUpdatedAt(currentTime);
                 return managerRepository.save(existingManager);
             }
         }
@@ -95,17 +92,5 @@ public class ManagerServiceImpl implements ManagerService {
             return Collections.emptyList();
         }
     }
-//    public List<ManagerInfoDto> getClientsByManagerId(Long managerId) {
-////        List<ManagerInfoDto> managerInfoDtos = new ArrayList<>();
-//
-//        Optional<Manager> manager = managerRepository.findById(managerId);
-//        List<Client> clients = manager.get().getClients();
-//        List<ManagerInfoDto> managerInfoDtos = clients.stream()
-//                .map(client -> managerInfoMapper.managerInfoToDto(client.getManager()))
-//                .collect(Collectors.toList());
-////        for (Client client : manager.get().getClients()) {
-////            managerInfoDtos.add(managerInfoMapper.managerInfoToDto(client.getManager()));
-////        }
-//        return managerInfoDtos;
-//    }
+
 }

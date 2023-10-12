@@ -1,5 +1,6 @@
 package de.telran.bankapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import de.telran.bankapp.entity.enums.CurrencyCode;
 import de.telran.bankapp.entity.enums.ProductType;
 import de.telran.bankapp.entity.enums.Status;
@@ -23,6 +24,7 @@ public class Product {
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "manager_id")
     private Manager manager;
